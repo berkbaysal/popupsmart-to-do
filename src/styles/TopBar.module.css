@@ -1,0 +1,9 @@
+.welcomeMessage {
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+.listTitle {
+  text-align: center;
+}
