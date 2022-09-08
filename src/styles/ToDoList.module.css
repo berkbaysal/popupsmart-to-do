@@ -3,22 +3,3 @@
   font-weight: 600;
   font-size: 1.25rem;
 }
-.listItemContainer {
-  width: 400px;
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 1rem;
-}
-.incomplete {
-  background-color: lightblue;
-}
-.complete {
-  background-color: lightgreen;
-}
-.content {
-  margin-bottom: 1rem;
-}
-.checkbox {
-  display: flex;
-  justify-content: flex-end;
-}

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import styles from '../styles/ToDoList.module.css';
+import style from '../styles/ToDoList.module.css';
+
+import ListItem from './ListItem';
 const API_URL = 'https://6311f26ff5cba498da88f6db.mockapi.io/todos';
 
 const ToDoList = () => {
@@ -13,35 +15,8 @@ const ToDoList = () => {
       return <div>Yapılacaklar listesi boş.</div>;
     }
     return data.map((item, index) => (
-      <div className={`${styles.listItemContainer} ${item.isCompleted ? styles.complete : styles.incomplete}`} key={'list-item-' + index}>
-        <div className={styles.content}>{item.content}</div>
-        <div className={styles.checkbox}>
-          <input type="checkbox" id={'checkbox-' + index} checked={item.isCompleted} onChange={(e) => updateCompleted(index, e.target.checked)} />
-          <label htmlFor={'checkbox-' + index}>Completed</label>
-        </div>
-      </div>
+      <ListItem item={item} index={index} id={todoList[index].id} setTodoList={setTodoList} key={'list-item-' + index} />
     ));
-  }
-
-  async function updateCompleted(changeIndex, newValue) {
-    const res = await fetch(`${API_URL}/${todoList[changeIndex].id}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ isCompleted: newValue }),
-    });
-    const json = await res.json();
-
-    setTodoList((oldList) => {
-      let newList = [];
-      oldList.forEach((listItem, index) => {
-        if (index === changeIndex) {
-          newList.push(json);
-        } else {
-          newList.push(listItem);
-        }
-      });
-      return newList;
-    });
   }
 
   async function fetchDataFromAPI() {
@@ -56,7 +31,7 @@ const ToDoList = () => {
 
   return (
     <div>
-      <div className={styles.listTitle}>Yapılacaklar:</div>
+      <div className={style.listTitle}>Yapılacaklar:</div>
       {constructJSXfromData(todoList)}
     </div>
   );
