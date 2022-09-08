@@ -1,0 +1,40 @@
+.newItemContainer {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+.content {
+  resize: none;
+  width: 400px;
+  font-family: inherit;
+  height: 5rem;
+}
+.buttons {
+  margin-top: 2rem;
+}
+.button {
+  font-size: 1.2rem;
+  margin: 0 1rem;
+  padding: 0 1rem;
+}
+.errorText {
+  color: red;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+.error {
+  border: 1px solid red;
+}

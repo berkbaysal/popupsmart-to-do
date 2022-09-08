@@ -1,6 +1,28 @@
+.topBarContainer {
+  width: calc(400px + 2rem);
+}
 .welcomeMessage {
   font-weight: 600;
   text-align: center;
   font-size: 1.5rem;
   margin: 1rem;
+}
+.subtitleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
+  font-weight: 600;
+}
+.listTitle {
+  font-size: 1.2rem;
+}
+.newNoteButton {
+  padding: 0.5rem 1rem;
+  background-color: lightblue;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.newNoteButton:hover {
+  filter: brightness(105%);
 }

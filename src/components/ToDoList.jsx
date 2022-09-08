@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import style from '../styles/ToDoList.module.css';
+import React, { useEffect } from 'react';
 
 import ListItem from './ListItem';
 const API_URL = 'https://6311f26ff5cba498da88f6db.mockapi.io/todos';
 
-const ToDoList = () => {
-  const [todoList, setTodoList] = useState(null);
-
+const ToDoList = ({ todoList, setTodoList }) => {
   function constructJSXfromData(data) {
     if (!data) {
       return <div>Yapılacaklar listesi yükleniyor...</div>;
@@ -29,12 +26,7 @@ const ToDoList = () => {
     fetchDataFromAPI();
   }, []);
 
-  return (
-    <div>
-      <div className={style.listTitle}>Yapılacaklar:</div>
-      {constructJSXfromData(todoList)}
-    </div>
-  );
+  return <div>{constructJSXfromData(todoList)}</div>;
 };
 
 export default ToDoList;

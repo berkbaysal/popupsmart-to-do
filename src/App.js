@@ -6,6 +6,7 @@ import WelcomeScreen from './components/WelcomeScreen';
 
 function App() {
   const [username, setUsername] = useState(null);
+  const [todoList, setTodoList] = useState(null);
 
   function checkUserNameExists() {
     const storedUsername = localStorage.getItem('username');
@@ -20,8 +21,8 @@ function App() {
       {!username && <WelcomeScreen setUsername={setUsername} />}
       {username && (
         <>
-          <TopBar name={username} />
-          <ToDoList />
+          <TopBar name={username} setTodoList={setTodoList} todoList={todoList} />
+          <ToDoList todoList={todoList} setTodoList={setTodoList} />
         </>
       )}
     </div>

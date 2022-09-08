@@ -1,6 +1,6 @@
 .listItemContainer {
   width: 400px;
-  margin: 1rem;
+  margin: 1rem 0;
   padding: 1rem;
   border-radius: 1rem;
   display: flex;
@@ -48,4 +48,8 @@
   font-size: 1.5rem;
   padding: 0.2rem 0;
   text-align: center;
+  cursor: pointer;
+}
+.icon:hover {
+  transform: scale(1.1);
 }
