@@ -20,7 +20,6 @@ const WelcomeScreen = ({ setUsername }) => {
     } else {
       let reformattedName = userInput.toLowerCase();
       reformattedName = reformattedName.charAt(0).toUpperCase() + reformattedName.slice(1);
-      console.log(reformattedName);
       return reformattedName;
     }
   }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import style from '../styles/NewListItem.module.css';
 const API_URL = 'https://6311f26ff5cba498da88f6db.mockapi.io/todos';
 
-const NewListItem = ({ setTodoList, setAddingNewNote, todoList }) => {
+const NewListItem = ({ setTodoList, setAddingNewNote, todoList, darkmode }) => {
   const [content, setContent] = useState('');
   const [error, setError] = useState(false);
   async function updateContent(note) {
@@ -39,7 +39,7 @@ const NewListItem = ({ setTodoList, setAddingNewNote, todoList }) => {
   }
 
   return (
-    <div className={style.newItemContainer}>
+    <div className={style.newItemContainer} style={{ backgroundColor: darkmode ? '#222' : 'white' }}>
       <div className={style.title}>Yeni Yapılacak:</div>
       <textarea value={content} onChange={(e) => setContent(e.target.value)} className={`${style.content} ${error ? style.error : ''}`}></textarea>
       {error && <div className={style.errorText}>Yapılacak en az üç harf olmalı!</div>}

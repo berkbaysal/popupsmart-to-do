@@ -1,11 +1,21 @@
 .topBarContainer {
   width: calc(400px + 2rem);
 }
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .welcomeMessage {
   font-weight: 600;
-  text-align: center;
+  text-align: left;
   font-size: 1.5rem;
-  margin: 1rem;
+  margin: 1rem 0;
+}
+.darkmodeToggle {
+  font-weight: 600;
+  text-align: left;
+  font-size: 2rem;
 }
 .subtitleContainer {
   display: flex;
@@ -22,6 +32,7 @@
   background-color: lightblue;
   border-radius: 0.5rem;
   cursor: pointer;
+  color: black;
 }
 .newNoteButton:hover {
   filter: brightness(105%);
